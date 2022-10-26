@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import logo from "assets/logo.png";
+import logo from "assets/Logos.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { useScroll } from "components/useScroll";
@@ -18,9 +18,11 @@ function Navbar() {
   state={isNavOpen ? 1 : 0}
   >
     <div className="brand__container">
-      <a href="#" className='brand'>
-        <img src={logo} alt="logo" />
-      </a>  
+      <div className='brand'>
+       <img src={logo} alt=""/> 
+       
+      </div>  
+     <div className='brand padding'> Metamorfosis visual</div>
       <div className="toggle">
         {isNavOpen ? (
           <MdClose onClick={ () => setIsNavOpen(false)} />
@@ -36,23 +38,25 @@ function Navbar() {
     </div>
     <div className={`links ${isNavOpen ? "show" : ""}`}>
     <ul>
-        <li className="active">
-            <a href="#home">Home</a>
+       
+          <li>
+            <a href="#services">Origen</a>
           </li>
           <li>
-            <a href="#services">Services</a>
+            <a href="#portfolio">Galería</a>
           </li>
           <li>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Mapa</a>
+          </li>
+          
+          <li>
+            <a href="#testimonials">Testimonio</a>
           </li>
           <li>
-            <a href="#blog">Blog</a>
+            <a href="#pricing">Tienda</a>
           </li>
           <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Contacto</a>
           </li>
         </ul>
     </div>
@@ -71,15 +75,26 @@ const Nav = styled(motion.nav)`
       display: none;
     }
   }
+
+  .padding{
+    padding-top:2%
+  }
+  .brand{
+    display:flex;
+    justify-content:center;
+  }
+  img{
+    width:30%;
+  
+   
+  }
   .links {
     ul {
       list-style-type: none;
       display: flex;
       gap: 3rem;
       .active{
-        a {
-          border-bottom: 0.2rem solid var(--secondary-color);
-        }
+        
       }
       li {
         a {
@@ -117,7 +132,7 @@ const Nav = styled(motion.nav)`
       right: 0;
       width: ${({ state }) => (state ? "100%" : "0%")};
       height: 100vh;
-      background-color: var(--secondary-color);
+      background-color: black;
       opacity: 0;
       visibility: hidden;
       transition: 0.4s ease-in-out;

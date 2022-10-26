@@ -29,7 +29,7 @@ function Testimonials() {
     },
   ];
   return (
-    <Section ref={element}>
+    <Section id="testimonials" ref={element}>
       <div className="container">
         <motion.div className="testimonials"
         variants={testimonialsAnimations}

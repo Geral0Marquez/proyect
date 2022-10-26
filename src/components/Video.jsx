@@ -33,7 +33,7 @@ function Video() {
 }
 
 const Section = styled.section`
-background-color: #662d91aa;
+background-color:  #1BD4F0;
 height: 100vh;
 display: flex;
 justify-content: center;

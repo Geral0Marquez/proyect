@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import play from "assets/play.png";
 import home from "assets/home.png";
 import Title from './Title';
 import { motion } from "framer-motion";
@@ -27,7 +26,7 @@ function Blog() {
     },
   ]
   return <Section id="blog" ref={element}>
-    <Title value="Blog" />
+    <Title value="Mapa" />
     <div className="blogs">
         {blogsData.map(({ title, type, description }) => {
           return (
@@ -40,18 +39,8 @@ function Blog() {
                 duration: 0.8,
               }}
             >
-              <div className="image"></div>
-              <div className="title">
-                <h3>{title}</h3>  
-              </div>
-                <span className="type">{type}</span>
-                <div className="description">
-                  <p>{description}</p>  
-                </div>
-                <div className="more">
-                  <img src={play} alt="Play" />
-                  <span>Read More</span>  
-                </div>
+
+              
             </motion.div>
           )
         })}

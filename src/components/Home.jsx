@@ -1,74 +1,45 @@
 import React from 'react';
 import styled from "styled-components";
-import home from "assets/home.png";
-import play from "assets/play.png";
+
 import Navbar from './Navbar';
 import { motion } from "framer-motion";
-import { homeAnimation, homeInfoAnimation } from "animation";
+import { homeAnimation } from "animation";
 
 function Home() {
   return (
     <Section id="home">
       <Navbar />
       <motion.div className="home"
-      variants={homeAnimation}
-      transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+        variants={homeAnimation}
+        transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
       >
         <div className="content">
           <div className="title">
-            <h1>Blossoms Parlour</h1>
-          </div>  
+            <h1>Distrito Perpetuo del Socorro</h1>
+          </div>
           <div className="subTitle">
             <p>
-              At the Beauty Parlour, we believe in beauty with a conscience. 
-              We have created a salon that offers the highest quality hair 
-              services.
-            </p>  
+              La creatividad nunca se detiene
+            </p>
           </div>
-          <img src={play} alt="Play Button" />
-        </div>  
+          
+            <div className="cta">
+              <div className='bnt-cv'>¡Conócelo!</div>
+              
+            </div>
+
+        
+
+        </div>
       </motion.div>
 
-      <motion.div className="info"
-      variants={homeInfoAnimation}  
-      transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
-      >
-          <div className="grid">
-            <div className="col">
-                <strong>Parlour</strong>
-                <p>Blossoms Academy</p>
-            </div>
-            <div className="col">
-                <strong>Email</strong>
-                <p>blossoms@gmail.com</p>
-            </div> 
-            <div className="col">
-                <strong>Mobile</strong>
-                <p>+91 8897666511</p>
-            </div> 
-            <div className="col">
-                <strong>Address</strong>
-                <p>322, Long Fly,</p>
-                <p>997773 India</p>
-            </div> 
-            <div className="col">
-                <strong>Services</strong>
-                <p>Sparking</p>
-                <p>SPA Cream</p>
-            </div> 
-            <div className="col">
-                <strong>Working Hours</strong>
-                <p>Monday to Friday</p>
-                <p>08:00 to 09:00</p>
-            </div>   
-          </div>
-      </motion.div>
+
     </Section>
   );
 }
 
 const Section = styled.section`
-  background: url(${home}) no-repeat center;
+  background: linear-gradient(174deg, rgba(37,87,187,1) 0%, rgba(37,87,187,1) 42%, rgba(3,206,254,1) 100%);;
   min-height: 100vh;
   background-size: cover;
   position: relative;
@@ -93,6 +64,7 @@ const Section = styled.section`
         p {
           width: 70%;
           margin-bottom: 2rem;
+          font-size:40px;
         }
       }
     }
@@ -110,10 +82,39 @@ const Section = styled.section`
       color: #fff;
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  .cta {
+    
+    padding: 15px 20px;
+    display: flex;
+    grid-gap: 1rem;
+    gap: 1.2rem;
+    border: 1px solid #fff;
+    font-size: 18px;
+    font-weight: 700;
+    }
+  
+  
+  .btn-cv {
+    font-weight: 700;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 18px;
+    margin-left: 18px;
+    position: relative;
+    background-color: transparent;
+
+    text-decoration: none;
+  }
+  
+  .cta:hover {
+    color: black;
+    background-color: #fff;
+  }
+
+  @media screen and (min-width: 280px) and (max-width: 1635px) {
     .home {
       .content {
-        padding-left: 2rem;
+        padding-left: 8rem;
         width: 100%;
         margin-bottom: 2rem;
         .title {

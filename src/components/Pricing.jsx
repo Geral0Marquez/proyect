@@ -69,7 +69,7 @@ function Pricing() {
   ]
 
   return (
-    <Section ref={element}>
+    <Section id="pricing" ref={element}>
       <Title value="pricing" />
       <div className="background">
         <img src={pricing1} alt="background" className="bg1" />
